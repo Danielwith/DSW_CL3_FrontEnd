@@ -1,0 +1,120 @@
+<div class="nav-header">
+  <div class="nav-container">
+    Mantenimiento de Usuarios
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+    <div class="container-col-md-12">
+      <div class="container-card">
+        <div class="nav-button-responsive card-header">
+          <div class="nav-input">
+            <div class="input-search">
+              <mat-icon>search</mat-icon>
+              <input placeholder="Buscar gasto por proveedor" (input)="aplicarFiltro($event)">
+            </div>
+          </div>
+          <div class="nav-resume">
+            <button mat-raised-button (click)="registrarElemento()"><mat-icon>add</mat-icon>Registrar
+              Gasto</button>
+          </div>
+        </div>
+        <div class="nav-button-icon-responsive card-header">
+          <div class="nav-input">
+            <div class="input-search">
+              <mat-icon>search</mat-icon>
+              <input placeholder="Buscar gasto por proveedor" (input)="aplicarFiltro($event)">
+            </div>
+          </div>
+          <div class="nav-report">
+            <button mat-mini-fab color="primary"
+              (click)="obtenerDatosOrdenadosYFiltrados()"><mat-icon>description</mat-icon></button>
+          </div>
+          <div class="nav-resume">
+            <button mat-mini-fab color="primary" (click)="registrarElemento()"><mat-icon>add</mat-icon></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="dashboard-table ">
+            <div class="table-responsive">
+              <mat-table [dataSource]="dataSource" matSort class="table">
+                <!-- Columnas -->
+                <ng-container matColumnDef="idUsuario">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.idUsuario }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nombres">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.nombres }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="apaterno">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ap. Paterno</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.apaterno }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="amaterno">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Ap. Materno</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.amaterno }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="correo">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Correo</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.correo }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="dni">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>DNI</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.dni }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="fechaNacimiento">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>F. NACIMIENTO</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.fechaNacimiento | date: 'dd/MM/yyyy' }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="fechaRegistro">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>F. REGISTRO</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.fechaRegistro | date: 'dd/MM/yyyy' }}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ubigeo">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>UBIGEO</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{ element.ubigeo}}</mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <div class="action-container">
+                      <button mat-icon-button matTooltip="Editar Gasto" color="primary"
+                        (click)="actualizarElemento(element)" [matTooltipPosition]="'left'">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button matTooltip="Eliminar Gasto" color="warn"
+                        (click)="eliminarElemento(element.idUsuario)" [matTooltipPosition]="'above'">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                  </mat-cell>
+                </ng-container>
+
+                <!-- Fila de encabezado -->
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+                <!-- Filas de datos -->
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+              </mat-table>
+            </div>
+            <div class="table-paginator">
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

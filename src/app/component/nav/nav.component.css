@@ -1,0 +1,163 @@
+.nav-color {
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  z-index: 900;
+}
+
+.nav-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-user::before {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 1px;
+  background-color: rgb(208, 208, 208);
+}
+
+.user-name {
+  font-weight: 500;
+  margin: 0;
+}
+
+.user-role {
+  margin: 0;
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 110;
+  margin: 0 5px;
+  font-weight: 500;
+  gap: 5px;
+  transition: 0.3s;
+  color: white;
+  padding: 1px 12px 1px 8px;
+}
+
+.user-button:hover {
+  background-color: gray;
+  border-radius: 3px;
+}
+
+.nav-datepicker {
+  margin: 0 5px 0 -3px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 45%;
+}
+
+.nav-date > input {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  right: 0;
+}
+
+.nav-datepicker > input {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  margin-bottom: 0;
+  color: #fff;
+  background-color: #dedede4d;
+  border: medium none;
+  padding: 11px 19px;
+  line-height: normal;
+  font-size: 0.8571em;
+  height: auto;
+  box-shadow: none;
+  display: block;
+  background-clip: padding-box;
+  border-radius: 30px;
+}
+
+.nav-datepicker > input:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.date-icon-container {
+  margin: 0;
+  display: flex;
+}
+
+.icon-container {
+  background-color: #dedede4d;
+  border: medium none;
+  color: #fff;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .user-data {
+    display: none;
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Estilos para pantallas de escritorio */
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+}

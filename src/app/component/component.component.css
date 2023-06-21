@@ -1,0 +1,123 @@
+.nav-group {
+  margin-top: 20px;
+}
+
+.nav-line-group {
+  padding-left: 20px;
+}
+
+.nav-line > * {
+  color: rgb(224, 224, 224) !important;
+}
+
+.mdc-list-item__primary-text {
+  color: rgb(224, 224, 224) !important;
+}
+
+.nav-line > mat-icon {
+  margin-right: 16px;
+}
+
+.nav {
+  position: fixed;
+  display: block;
+  height: 100%;
+  z-index: 1032;
+  visibility: visible;
+  background-color: #999;
+  overflow-y: visible;
+  border-top: none;
+  text-align: left;
+  padding: 0;
+  font-weight: 200;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+}
+
+.nav-list {
+  position: relative;
+  max-height: calc(100vh - 75px);
+  min-height: 100%;
+  overflow: auto;
+  width: 260px;
+  z-index: 4;
+  padding-bottom: 75px;
+}
+
+.nav-logo {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-logo .logo-text {
+  text-transform: uppercase;
+  padding: 5px 0 5px 15px;
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  color: #1dc7ea;
+  background-color: transparent;
+}
+
+.logo-img {
+  width: 30px;
+  display: inline-block;
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+.nav-background {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+.nav-background:after {
+  background: linear-gradient(190deg, #2c2c2c 40%, #11226b 100%);
+  background-size: 150% 150%;
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0.97;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-logo {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+/* Estilos para pantallas de escritorio */
+@media (min-width: 1024px) {
+}

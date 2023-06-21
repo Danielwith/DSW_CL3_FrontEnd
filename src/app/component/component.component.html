@@ -1,0 +1,58 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="false" mode="push" class="nav">
+    <mat-nav-list class="nav-list">
+      <div class="nav-logo">
+        <a class="logo-text" href="">
+          <div class="logo-img">
+            <img src="">
+          </div>
+        </a>
+      </div>
+      <div class="nav-group">
+        <span mat-line class="nav-line-group">FACTURACIÓN</span>
+        <mat-list-item class="nav-line" (click)="navTitleChange(0)" (click)="sidenav.close()" [routerLink]="['sales']">
+          <mat-icon matListItemIcon>shopping_cart</mat-icon>
+          <span matListItemTitle>Ventas</span>
+        </mat-list-item>
+        <mat-list-item class="nav-line" (click)="navTitleChange(1)" (click)="sidenav.close()"
+          [routerLink]="['products']">
+          <mat-icon matListItemIcon>store</mat-icon>
+          <span matListItemTitle>Productos</span>
+        </mat-list-item>
+        <mat-list-item class="nav-line" (click)="navTitleChange(2)" (click)="sidenav.close()" [routerLink]="['bills']">
+          <mat-icon matListItemIcon>money_off</mat-icon>
+          <span matListItemTitle>Gastos</span>
+        </mat-list-item>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="nav-group">
+        <span mat-line class="nav-line-group">OPERACIONES</span>
+        <mat-list-item class="nav-line" (click)="navTitleChange(3)" (click)="sidenav.close()"
+          [routerLink]="['invoices']">
+          <mat-icon matListItemIcon>note</mat-icon>
+          <span matListItemTitle>Notas electrónicas</span>
+        </mat-list-item>
+        <mat-list-item class="nav-line" (click)="navTitleChange(4)" (click)="sidenav.close()"
+          [routerLink]="['delivery']">
+          <mat-icon matListItemIcon>local_shipping</mat-icon>
+          <span matListItemTitle>Guías de remisión</span>
+        </mat-list-item>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="nav-group">
+        <span mat-line class="nav-line-group">CONTROL</span>
+        <mat-list-item class="nav-line" (click)="navTitleChange(5)" (click)="sidenav.close()"
+          [routerLink]="['/dashboard/']">
+          <mat-icon matListItemIcon>bar_chart</mat-icon>
+          <span matListItemTitle>Resumen</span>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+    <div class="nav-background"></div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div>
+      <app-nav (toggleSidenav)="sidenav.toggle()"></app-nav>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
